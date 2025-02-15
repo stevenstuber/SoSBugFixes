@@ -990,9 +990,16 @@ namespace Server.Multis
 
 		public bool CheckAccessibility( Item item, Mobile from )
 		{
+			if (item == null || from == null )
+				return false;
+
 			BaseHouse house = BaseHouse.FindHouseAt(from);
 
-			if (house == null)
+			if (house == null && from.InRange( item.Location, 3 ) && from.InLOS( item ) && (IsOwner(from) || IsCoOwner(from) || IsFriend(from)) )
+				return true;
+			else if (house == null && from.InRange( item.Location, 3 ) && from.InLOS( item ) && !IsLockedDown( item ) )
+				return true;
+			else if (house == null)
 				return false;
 
 			SecureAccessResult res = CheckSecureAccess( from, item );
@@ -1689,7 +1696,7 @@ namespace Server.Multis
 				bool valid = m_House != null && Sextant.Format( m_House.Location, m_House.Map, ref xLong, ref yLat, ref xMins, ref yMins, ref xEast, ref ySouth );
 
 				if ( valid )
-					location = String.Format( "{0}° {1}'{2}, {3}° {4}'{5}", yLat, yMins, ySouth ? "S" : "N", xLong, xMins, xEast ? "E" : "W" );
+					location = String.Format( "{0}Â° {1}'{2}, {3}Â° {4}'{5}", yLat, yMins, ySouth ? "S" : "N", xLong, xMins, xEast ? "E" : "W" );
 				else
 					location = "unknown";
 
