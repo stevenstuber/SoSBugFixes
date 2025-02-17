@@ -126,15 +126,15 @@ namespace Server
 
 			if ( item is BaseArmor )
 			{
-				price +=		((BaseArmor)item).ArmorAttributes.DurabilityBonus * 2;
-				price +=		((BaseArmor)item).ArmorAttributes.LowerStatReq * 2;
+				// price +=		((BaseArmor)item).ArmorAttributes.DurabilityBonus * 2;
+				// price +=		((BaseArmor)item).ArmorAttributes.LowerStatReq * 2;
 				price +=		((BaseArmor)item).ArmorAttributes.SelfRepair * 100;
 				price +=		((BaseArmor)item).ArmorAttributes.MageArmor * 200;
-				price +=		((BaseArmor)item).PhysicalBonus * 2;
-				price +=		((BaseArmor)item).FireBonus * 2;
-				price +=		((BaseArmor)item).ColdBonus * 2;
-				price +=		((BaseArmor)item).PoisonBonus * 2;
-				price +=		((BaseArmor)item).EnergyBonus * 2;
+				// price +=		((BaseArmor)item).PhysicalBonus * 2;
+				// price +=		((BaseArmor)item).FireBonus * 2;
+				// price +=		((BaseArmor)item).ColdBonus * 2;
+				// price +=		((BaseArmor)item).PoisonBonus * 2;
+				// price +=		((BaseArmor)item).EnergyBonus * 2;
 				price +=		((BaseArmor)item).DexBonus * 5;
 				price +=		((BaseArmor)item).IntBonus * 5;
 				price +=		((BaseArmor)item).StrBonus * 5;
@@ -190,7 +190,7 @@ namespace Server
 			else if ( item is BaseWeapon )
 			{
 				price +=		((BaseWeapon)item).WeaponAttributes.SelfRepair * 100;
-				price +=		((BaseWeapon)item).WeaponAttributes.LowerStatReq * 2;
+				// price +=		((BaseWeapon)item).WeaponAttributes.LowerStatReq * 2;
 				price +=		((BaseWeapon)item).WeaponAttributes.HitPhysicalArea * 3;
 				price +=		((BaseWeapon)item).WeaponAttributes.HitFireArea * 3;
 				price +=		((BaseWeapon)item).WeaponAttributes.HitColdArea * 3;
@@ -258,8 +258,8 @@ namespace Server
 							price += lrc * 5;
 
 				price +=		((BaseWeapon)item).Attributes.Luck * 2;
-				price +=		((BaseWeapon)item).Attributes.WeaponDamage * 5;
-				price +=		((BaseWeapon)item).Attributes.WeaponSpeed * 6;
+				// price +=		((BaseWeapon)item).Attributes.WeaponDamage * 5;
+				// price +=		((BaseWeapon)item).Attributes.WeaponSpeed * 6;
 				price +=		((BaseWeapon)item).Attributes.BonusStr * 10;
 				price +=		((BaseWeapon)item).Attributes.BonusDex * 10;
 				price +=		((BaseWeapon)item).Attributes.BonusInt * 10;
@@ -552,11 +552,11 @@ namespace Server
 			}
 			else if ( item is BaseClothing )
 			{
-				price +=		((BaseClothing)item).Resistances.Physical * 2;
-				price +=		((BaseClothing)item).Resistances.Fire * 2;
-				price +=		((BaseClothing)item).Resistances.Cold * 2;
-				price +=		((BaseClothing)item).Resistances.Poison * 2;
-				price +=		((BaseClothing)item).Resistances.Energy * 2;
+				// price +=		((BaseClothing)item).Resistances.Physical * 2;
+				// price +=		((BaseClothing)item).Resistances.Fire * 2;
+				// price +=		((BaseClothing)item).Resistances.Cold * 2;
+				// price +=		((BaseClothing)item).Resistances.Poison * 2;
+				// price +=		((BaseClothing)item).Resistances.Energy * 2;
 
 				price +=		(int)(((BaseClothing)item).SkillBonuses.Skill_1_Value * 2);
 				price +=		(int)(((BaseClothing)item).SkillBonuses.Skill_2_Value * 2);
