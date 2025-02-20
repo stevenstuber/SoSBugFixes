@@ -93,7 +93,8 @@ namespace Server.Items
 
 				if ( nSprung )
 				{
-					int nTrapType = Utility.RandomMinMax( 1, 25 );
+					// int nTrapType = Utility.RandomMinMax( 1, 25 );
+					int nTrapType = Utility.RandomList( 1, 3, 6, 7, 8, 9, 11, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24)
 
 					if ( HiddenTrapType > 0 ){ nTrapType = HiddenTrapType; }
 
@@ -101,12 +102,14 @@ namespace Server.Items
 
 					if ( Server.Misc.Worlds.IsOnSpaceship( m.Location, m.Map ) )
 					{
-						HiddenTrapType = Utility.RandomList( 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 16, 18, 19, 20, 21, 22, 23 );
+						// HiddenTrapType = Utility.RandomList( 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 16, 18, 19, 20, 21, 22, 23 );
+						HiddenTrapType = Utility.RandomList( 1, 3, 6, 7, 8, 9, 11, 16, 18, 19, 20, 21, 22);
 						nTrapType = HiddenTrapType;
 					}
 					else if ( Server.Misc.Worlds.IsOnSpaceship( m.Location, m.Map ) )
 					{
-						HiddenTrapType = Utility.RandomList( 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 16, 18, 19, 20, 21, 22, 23 );
+						// HiddenTrapType = Utility.RandomList( 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 16, 18, 19, 20, 21, 22, 23 );
+						HiddenTrapType = Utility.RandomList( 1, 3, 6, 7, 8, 9, 11, 16, 18, 19, 20, 21, 22);
 						nTrapType = HiddenTrapType;
 					}
 
