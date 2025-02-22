@@ -16,7 +16,7 @@ namespace Server.Items
 
 		public override double DefaultWeight
 		{
-			get { return ( Core.ML ? ( 0.02 / 3 ) : 0.02 ); }
+			get { return ( Core.ML ? ( 0.02 / 30 ) : 0.02 ); }
 		}
 
 		[Constructable]
@@ -110,7 +110,7 @@ namespace Server.Items
 	{
 		public override double DefaultWeight
 		{
-			get { return ( Core.ML ? ( 0.02 / 3 ) : 0.02 ); }
+			get { return ( Core.ML ? ( 0.02 / 30 ) : 0.02 ); }
 		}
 
 		[Constructable]
