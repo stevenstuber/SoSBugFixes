@@ -17,6 +17,8 @@ namespace Server.Misc
 		private static TimeSpan m_Delay = TimeSpan.FromMinutes( MyServerSettings.ServerSaveMinutes() );
 		private static TimeSpan m_Warning = TimeSpan.Zero;
 
+		private static int m_BackupCounter = 0;
+
 		public static void Initialize()
 		{
 			new AutoSave().Start();
@@ -97,11 +99,29 @@ namespace Server.Misc
 
 		private static string[] m_Backups = new string[]
 			{
-				"Sixth Backup",
-				"Fifth Backup",
-				"Fourth Backup",
-				"Third Backup",
-				"Second Backup",
+				"24th Backup",
+				"23rd Backup",
+				"22nd Backup",
+				"21st Backup",
+				"20th Backup",
+				"19th Backup",
+				"18th Backup",
+				"17th Backup",
+				"16th Backup",
+				"15th Backup",
+				"14th Backup",
+				"13th Backup",
+				"12th Backup",
+				"11th Backup",
+				"10th Backup",
+				"9th Backup",
+				"8th Backup",
+				"7th Backup",
+				"6th Backup",
+				"5th Backup",
+				"4th Backup",
+				"3rd Backup",
+				"2nd Backup",
 				"Most Recent"
 			};
 
@@ -110,7 +130,24 @@ namespace Server.Misc
 			if ( m_Backups.Length == 0 )
 				return;
 
-			string root = Path.Combine( Core.BaseDirectory, "Backups/Automatic" );
+			m_BackupCounter += 1;
+			if (m_BackupCounter >= 144)
+				m_BackupCounter = 0;
+
+			string root;
+
+			if (m_BackupCounter == 0) // Daily Backup
+			{
+				root = Path.Combine( Core.BaseDirectory, "Backups/DailyAutomatic" );
+			}
+			else if ((m_BackupCounter % 6) == 0) // Hourly Backup
+			{
+				root = Path.Combine( Core.BaseDirectory, "Backups/HourlyAutomatic" );
+			}
+			else  // Normal Backup
+			{
+				root = Path.Combine( Core.BaseDirectory, "Backups/Automatic" );
+			}
 
 			if ( !Directory.Exists( root ) )
 				Directory.CreateDirectory( root );
