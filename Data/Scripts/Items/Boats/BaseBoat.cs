@@ -123,21 +123,22 @@ namespace Server.Multis
 		{
 			get
 			{
+				// these numbers are set for a decay timer of 3650 days
 				DateTime start = TimeOfDecay - BoatDecayDelay;
 
-				if ( DateTime.Now - start < TimeSpan.FromHours( 1.0 ) )
+				if ( DateTime.Now - start < TimeSpan.FromDays( 30 ) )
 					return translateText( this, 1043010 ); // This structure is like new.
 
-				if ( DateTime.Now - start < TimeSpan.FromDays( 2.0 ) )
+				if ( DateTime.Now - start < TimeSpan.FromDays( 180 ) )
 					return translateText( this, 1043011 ); // This structure is slightly worn.
 
-				if ( DateTime.Now - start < TimeSpan.FromDays( 3.0 ) )
+				if ( DateTime.Now - start < TimeSpan.FromDays( 360 ) )
 					return translateText( this, 1043012 ); // This structure is somewhat worn.
 
-				if ( DateTime.Now - start < TimeSpan.FromDays( 4.0 ) )
+				if ( DateTime.Now - start < TimeSpan.FromDays( 1800 ) )
 					return translateText( this, 1043013 ); // This structure is fairly worn.
 
-				if ( DateTime.Now - start < TimeSpan.FromDays( 5.0 ) )
+				if ( DateTime.Now - start < TimeSpan.FromDays( 2500 ) )
 					return translateText( this, 1043014 ); // This structure is greatly worn.
 
 				return translateText( this, 1043015 ); // This structure is in danger of collapsing.
