@@ -625,6 +625,7 @@ namespace Server.Items
 
 			Weight = 3.0;
 			Layer = Layer.Trinket;
+			LootType = LootType.Blessed;
 
 			Content = content;
 		}

@@ -133,6 +133,7 @@ namespace Server.Items
 			m_MaxCharges = maxCharges;
 			m_DefaultIndex = -1;
 			m_Level = SecureLevel.CoOwners;
+			LootType = LootType.Blessed;
 		}
 
 		[Constructable]
