@@ -36,11 +36,13 @@ namespace Server.Misc
 				return;
 			}
 
-			if ( Core.SE && from.AllFollowers.Count > 0 )
+			PlayerMobile pm = (PlayerMobile) from;
+
+			if ( Core.SE && pm.AllFollowers.Count > 0 )
 			{
-				for ( int i = from.AllFollowers.Count - 1; i >= 0; --i )
+				for ( int i = pm.AllFollowers.Count - 1; i >= 0; --i )
 				{
-					BaseCreature pet = from.AllFollowers[i] as BaseCreature;
+					BaseCreature pet = pm.AllFollowers[i] as BaseCreature;
 
 					if (pet == null || pet.ControlMaster == null)
 						continue;
