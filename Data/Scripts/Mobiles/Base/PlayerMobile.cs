@@ -2087,7 +2087,7 @@ namespace Server.Mobiles
 				mountAble = false;
 				speedAble = false;
 			}
-			else if ( ( MySettings.S_NoMountBuilding && Server.Misc.Worlds.InBuilding( this ) ) || ( Region.Find( this.Location, this.Map ) is HouseRegion && MySettings.S_NoMountsInHouses ) )
+			else if ( ( MySettings.S_NoMountBuilding && Server.Misc.Worlds.InBuilding( this ) ) || ( Region.Find( this.Location, this.Map ) is HouseRegion && MySettings.S_NoMountsInHouses && (BaseHouse.FindHouseAt(this)) != null ) )
 			{
 				mountAble = false;
 			}

@@ -995,13 +995,6 @@ namespace Server.Multis
 
 			BaseHouse house = BaseHouse.FindHouseAt(from);
 
-			if (house == null && from.InRange( item.Location, 3 ) && from.InLOS( item ) && (IsOwner(from) || IsCoOwner(from) || IsFriend(from)) )
-				return true;
-			else if (house == null && from.InRange( item.Location, 3 ) && from.InLOS( item ) && !IsLockedDown( item ) )
-				return true;
-			else if (house == null)
-				return false;
-
 			SecureAccessResult res = CheckSecureAccess( from, item );
 
 			switch ( res )
@@ -1051,6 +1044,11 @@ namespace Server.Multis
 			{
 				if (house != null && house.Public )
 					return true;
+				else if (house == null)
+				{
+					if (IsOwner(from) || IsCoOwner(from) || IsFriend(from))
+						return true;
+				}
 				else if ( house.HasAccess(from) )
 					return IsFriend( from );
 			}

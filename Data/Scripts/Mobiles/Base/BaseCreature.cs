@@ -9072,7 +9072,7 @@ namespace Server.Mobiles
 					{
 						Server.Misc.HenchmanFunctions.DismountHenchman( leader );
 					}
-					else if ( Region.Find( this.Location, this.Map ) is HouseRegion && MySettings.S_NoMountsInHouses )
+					else if ( Region.Find( this.Location, this.Map ) is HouseRegion && MySettings.S_NoMountsInHouses && (BaseHouse.FindHouseAt(this)) != null )
 					{
 						Server.Misc.HenchmanFunctions.DismountHenchman( leader );
 					}

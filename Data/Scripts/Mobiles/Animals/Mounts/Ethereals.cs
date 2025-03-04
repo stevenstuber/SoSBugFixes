@@ -195,7 +195,7 @@ namespace Server.Mobiles
 			{
 				from.SendMessage( "You cannot mount that while you are in this place." );
 			}
-			else if ( ( MySettings.S_NoMountBuilding && Server.Misc.Worlds.InBuilding( from ) ) || ( from.Region is HouseRegion && MySettings.S_NoMountsInHouses ) )
+			else if ( ( MySettings.S_NoMountBuilding && Server.Misc.Worlds.InBuilding( from ) ) || ( from.Region is HouseRegion && MySettings.S_NoMountsInHouses && (BaseHouse.FindHouseAt(this)) != null ) )
 			{
 				from.SendMessage( "You cannot mount that while you are in here." );
 			}
