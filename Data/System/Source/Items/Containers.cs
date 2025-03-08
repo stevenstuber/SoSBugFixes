@@ -174,7 +174,7 @@ namespace Server.Items
 			}
 		}
 
-		public override int DefaultMaxItems{ get{ return 500; } }
+		public override int DefaultMaxItems{ get{ return 1000; } }
 
 		public void VirtualTotals()
 		{
